@@ -11,12 +11,16 @@ namespace patrick.Controllers
     [Route("api/[controller]")]
     public class CharacterController : ControllerBase
     {
-        private static Character knight = new Character();
+        private static List<Character> characters = new List<Character>
+        {
+            new Character(),
+            new Character{Name = "jorj"}
+        };
 
         [HttpGet]
-        public ActionResult<Character> get()
+        public ActionResult<List<Character>> get()
         {
-            return Ok(knight);
+            return Ok(characters);
         }
     }
 }
